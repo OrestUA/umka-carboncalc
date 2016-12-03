@@ -11,9 +11,11 @@ $(window).load(function() {
 	$('#status').delay(300).fadeOut(); 
 	$('#preloader').delay(300).fadeOut('slow');
 	$('body').delay(550).css({'overflow':'visible'});
+	
 })
 
 $(document).ready(function() {
+	
 		//animated logo
 		$(".navbar-brand").hover(function () {
 			$(this).toggleClass("animated shake");
@@ -64,6 +66,14 @@ $(document).ready(function() {
 					}
 			}
 		});
+
+		// Handle form submit
+		$("#userDataForm").submit(function( event ) {			
+			localStorage.setItem('name', $("#inputName").val());
+			localStorage.setItem('email', $("#inputEmail").val());
+			localStorage.setItem('subscription', $("#inputSubscription").val());			
+			event.preventDefault();
+		});
 		
 		//Subscribe
 		new UIMorphingButton( document.querySelector( '.morph-button' ) );
@@ -71,6 +81,5 @@ $(document).ready(function() {
 		[].slice.call( document.querySelectorAll( 'form button' ) ).forEach( function( bttn ) { 
 			bttn.addEventListener( 'click', function( ev ) { ev.preventDefault(); } );
 		} );
-
 });
 

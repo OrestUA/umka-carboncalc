@@ -230,6 +230,11 @@ a:focus {
 a:focus {
   outline: none;
 }
+
+img {
+  max-height: 100%;
+}
+
 .img-rounded {
   border-radius: 6px;
 }
@@ -4455,7 +4460,7 @@ footer {
   background-color: #edeff1;
   color: #bac1c8;
   font-size: 15px;
-  padding: 0;
+  padding: 0;  
 }
 footer a {
   color: #9aa4af;
@@ -4468,9 +4473,9 @@ footer p {
 }
 .footer-title {
   margin: 0 0 22px;
-  padding-top: 21px;
-  font-size: 24px;
-  line-height: 40px;
+  padding-top: 15px;
+  font-size: 20px;
+  line-height: 20px;
 }
 .footer-brand {
   display: block;
@@ -4768,8 +4773,11 @@ footer p {
 		address{margin-top:80px;}
 		.address{text-align:center}
 		.footer-banner{display:none}
-		
-		
-		
-		
 	}
+
+
+  /* Custom styles */
+
+  input[type="checkbox"].subscription-input {
+    margin-right: 10px;
+  }
