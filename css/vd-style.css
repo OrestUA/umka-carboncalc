@@ -62,6 +62,15 @@
 .questionOption{
 }
 
+.questionOptionVariant{
+  visibility: hidden;
+  position: absolute;
+}
+
+#qov1{
+  visibility: visible;
+}
+
 #questionButton{
   width: 100px;
   text-align: left;
