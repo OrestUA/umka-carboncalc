@@ -124,42 +124,59 @@
             <div class="questionOption">
               <!-- Список відвопідей -->
               <div class="questionOptionVariant" id="qov1">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="3">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="3">
               </div>
               <div class="questionOptionVariant" id="qov2">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="4">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="4">
               </div>
               <div class="questionOptionVariant" id="qov3">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="10">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="10">
               </div>
               <div class="questionOptionVariant" id="qov4">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="15">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="15">
               </div>
               <div class="questionOptionVariant" id="qov5">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="3">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="3">
               </div>
               <div class="questionOptionVariant" id="qov6">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="Об'єм двигуна">
-                <input type="text" class="form-control" name="name" style="width:300px;margin-top:10px;" id="inputName" placeholder="Кількість пробігу за рік в км">
+                <div class="">
+
+                <span>Кількість пробігу за рік в км: </span><input type="text" class="form-control questionForm" name="name" style="margin-top:10px;" id="inputName" placeholder="50000">
+              </div>
+              <div class="">
+
+                <span>Об'єм двигуна: </span><input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="1.2">
+              </div>
               </div>
               <div class="questionOptionVariant" id="qov7">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="Америка, Бразилія">
+                <input type="text" class="form-control questionForm" name="name" style="width:inherit;" id="inputName" placeholder="Америка, Бразилія">
               </div>
               <div class="questionOptionVariant" id="qov8">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="25">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="25">
               </div>
               <div class="questionOptionVariant" id="qov9">
                 <div>
-                  <input value="male" name="question" type="radio" class="with-font"/>
-                  <label for="male">Чоловіча</label>
+                  <input value="male" name="question" type="radio" class="gender"/>
+                  <label>Чоловіча</label>
                 </div>
                 <div>
-                  <input value="female" name="question"type="radio" class="with-font"/>
-                  <label for="female">Жіноча</label>
+                  <input value="female" name="question"type="radio" class="gender"/>
+                  <label>Жіноча</label>
                 </div>
               </div>
               <div class="questionOptionVariant" id="qov10">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="500$">
+                <div>
+                  <input value="500" name="question" type="radio" class="salary"/>
+                  <label>Менше $500</label>
+                </div>
+                <div>
+                  <input value="500-1000" name="question"type="radio" class="salary"/>
+                  <label>$500-1000</label>
+                </div>
+                <div>
+                  <input value="1000" name="question"type="radio" class="salary"/>
+                  <label>1000</label>
+                </div>
               </div>
 
 
@@ -168,7 +185,10 @@
 
 
                 <!-- Список відвопідей -->
-                <button type="button" class="btn btn-primary questionButton" name="button">Далі <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-embossed btn-primary" name="button" id="questionButton">Далі <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                <!--
+                <button type="button" class="btn btn-embossed btn-primary" name="button" id="skipButton">Пропустити <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                -->
             </div>
           </div>
         </div>

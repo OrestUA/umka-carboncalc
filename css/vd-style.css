@@ -1,6 +1,6 @@
 .questionContainer{
   width: 100%;
-  padding: 0 50px 0 50px;
+  padding: 0 100px 0 100px;
 }
 
 .pbar{
@@ -36,7 +36,7 @@
 .pbarItemCurrent{
   border-color: #6d6d6d;
   color: white;
-  background-color: green;
+  background-color: #0bb505;
 }
 
 .questionNum{
@@ -67,6 +67,11 @@
 .questionOptionVariant{
   visibility: hidden;
   position: absolute;
+  width: 100%;
+}
+
+.questionForm{
+  width: 150px;
 }
 
 #qov1{
@@ -74,6 +79,9 @@
 }
 
 #questionButton{
-  width: 100px;
-  text-align: left;
+  width: 150px;
+  display: inline-block;
+}
+
+#skipButton{
 }
