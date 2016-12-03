@@ -47,7 +47,7 @@ $(function(){
             user['age']=firstInput;
             break;
             case 9:
-            user['gender']=firstInput;
+            user['gender']=$('input:checked').val();
             break;
             case 10:
             user['salary']=firstInput;
