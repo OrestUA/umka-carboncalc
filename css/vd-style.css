@@ -13,25 +13,31 @@
 }
 
 .pbarItem{
-  height: 35px;
-  width: 35px;
-  border-radius: 35px;
+  height: 40px;
+  width: 40px;
+  border-radius: 55px;
   border: 2px solid black;
   display: inline-block;
-  line-height: 31px;
+  line-height: 36px;
   text-align: center;
   font-weight: bold;
   color: black;
+  font-size: 20px;
+}
+
+.pbarItemVisited{
+  border-color: #6d6d6d;
+  color: #6d6d6d;
+  background-color: #969696;
 }
 
 .pbarItemCurrent{
-  background-color: lightblue;
+  border-color: #bababa;
   color: white;
+  background-color: green;
 }
 
 .questionNum{
-  color: gray;
-  display: inline-block;
   margin-right: 35px;
   vertical-align: top;
   height: inherit;
@@ -43,16 +49,26 @@
 
 .questionBlock{
   display: inline-block;
-  width: 80%;
+  position: relative;
+  width: 100%;
 }
 
 .question{
-  display: inline-block;
   position: absolute;
   visibility: hidden;
+
 }
 
 .questionOption{
+}
+
+.questionOptionVariant{
+  visibility: hidden;
+  position: absolute;
+}
+
+#qov1{
+  visibility: visible;
 }
 
 #questionButton{
