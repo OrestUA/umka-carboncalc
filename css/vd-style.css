@@ -8,31 +8,33 @@
   display: flex;
 
   -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 25px;
+  background-image: url('../img/pbar.png');
 }
 
 .pbarItem{
   height: 40px;
   width: 40px;
   border-radius: 55px;
-  border: 2px solid black;
+  border: 2px solid #6d6d6d;
   display: inline-block;
   line-height: 36px;
   text-align: center;
   font-weight: bold;
-  color: black;
+  color: #6d6d6d;
   font-size: 20px;
+  background-color: white;
 }
 
 .pbarItemVisited{
   border-color: #6d6d6d;
   color: #6d6d6d;
-  background-color: #969696;
+  background-color: #adadad;
 }
 
 .pbarItemCurrent{
-  border-color: #bababa;
+  border-color: #6d6d6d;
   color: white;
   background-color: green;
 }
