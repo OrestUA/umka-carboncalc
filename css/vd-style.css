@@ -30,8 +30,6 @@
 }
 
 .questionNum{
-  color: gray;
-  display: inline-block;
   margin-right: 35px;
   vertical-align: top;
   height: inherit;
@@ -43,13 +41,14 @@
 
 .questionBlock{
   display: inline-block;
-  width: 80%;
+  position: relative;
+  width: 100%;
 }
 
 .question{
-  display: inline-block;
   position: absolute;
   visibility: hidden;
+
 }
 
 .questionOption{
