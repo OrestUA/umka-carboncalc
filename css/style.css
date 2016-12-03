@@ -4781,3 +4781,7 @@ footer p {
   input[type="checkbox"].subscription-input {
     margin-right: 10px;
   }
+
+  .navbar-brand {
+      padding: 9.5px 15px 9.5px;
+  }  

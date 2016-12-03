@@ -73,6 +73,8 @@ $(document).ready(function() {
 			localStorage.setItem('email', $("#inputEmail").val());
 			localStorage.setItem('subscription', $("#inputSubscription").val());			
 			event.preventDefault();
+			window.location.href = 'form.html';
+			console.log(window.location); 
 		});
 		
 		//Subscribe
