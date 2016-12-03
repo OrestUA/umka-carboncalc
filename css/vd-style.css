@@ -1,0 +1,50 @@
+.questionContainer{
+  width: 100%;
+  padding: 0 50px 0 50px;
+}
+
+.pbar{
+  width: 100%;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
+
+.pbarItem{
+  height: 35px;
+  width: 35px;
+  border-radius: 35px;
+  border: 2px solid black;
+  display: inline-block;
+  line-height: 31px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
+.questionNum{
+  color: gray;
+  display: inline-block;
+  margin-right: 35px;
+  vertical-align: top;
+  height: inherit;
+}
+
+.questionBlock{
+  display: inline-block;
+  width: 80%;
+}
+
+.question{
+  display: inline-block;
+}
+
+.questionOption{
+}
+
+#questionButton{
+  width: 100px;
+  text-align: left;
+}
