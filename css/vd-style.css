@@ -24,12 +24,21 @@
   color: black;
 }
 
+.pbarItemCurrent{
+  background-color: lightblue;
+  color: white;
+}
+
 .questionNum{
   color: gray;
   display: inline-block;
   margin-right: 35px;
   vertical-align: top;
   height: inherit;
+}
+
+#q1{
+  visibility: visible;
 }
 
 .questionBlock{
@@ -39,6 +48,8 @@
 
 .question{
   display: inline-block;
+  position: absolute;
+  visibility: hidden;
 }
 
 .questionOption{
