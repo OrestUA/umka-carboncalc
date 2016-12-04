@@ -68,10 +68,10 @@ $(document).ready(function() {
 		});
 
 		// Handle form submit
-		$("#userDataForm").submit(function( event ) {			
+		$("#userDataForm").submit(function( event ) {	
 			localStorage.setItem('name', $("#inputName").val());
 			localStorage.setItem('email', $("#inputEmail").val());
-			localStorage.setItem('subscription', $("#inputSubscription").val());			
+			localStorage.setItem('subscription', $("#inputSubscription").prop('checked'));			
 			event.preventDefault();
 			window.location.href = 'form.html';
 			console.log(window.location); 

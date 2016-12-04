@@ -204,8 +204,11 @@ $(function(){
     });
 
     function sendFormData() {
+      user.name = localStorage.getItem('name');
+      user.email = localStorage.getItem('email');
+      user.subscription = JSON.parse(localStorage.getItem('subscription'));
       // console.log(11, user);
-      $.post( "http://172.23.76.243:8080/carboncalc", user, function(data) {
+      $.post( "http://172.23.76.243:8080/carbon_footprint", JSON.stringify(user), function(data) {
         console.log(data);
         // Put the object into storage
         localStorage.setItem('resultData', JSON.stringify(data));
