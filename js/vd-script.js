@@ -227,8 +227,7 @@ $(function(){
           // dataType : "json",
           contentType: "application/json; charset=utf-8",     
           data : JSON.stringify(user),
-          success : function(data) {
-            console.log(data);
+          success : function(data) {           
             // Put the object into storage
             localStorage.setItem('resultData', JSON.stringify(data));
             window.location.href = 'results.html';

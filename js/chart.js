@@ -1,20 +1,8 @@
 $(document).ready(function () {
-    var results = JSON.parse(localStorage.getItem('resultData'));
-    console.log(11, results);
-    resultsBar = results.barChart;
-    //   [
-    //       { name: 'Tи', amount: 14},
-    //       { name: 'Україна', amount: 8},
-    //       { name: 'Світ', amount: 6},
-    //   ];
+    var results = JSON.parse(localStorage.getItem('resultData')); 
 
+    resultsBar = results.barChart;
     resultsPie = results.pieChart;
-    //    [
-    //       { name: 'Світло', amount: 9},
-    //       { name: 'Тепло', amount: 8},
-    //       { name: 'Авто', amount: 6},
-    //       { name: 'Газ', amount: 6}      
-    //   ];
 
     var colorPalete;
     if (resultsBar[0].amount > resultsBar[2].amount) {
@@ -23,9 +11,7 @@ $(document).ready(function () {
     } else {
         resultsBar[0].dangerLevel = false;
         colorPalete = ['#2D5700', '#447D06', '#7AB837', '#9CD55F'];
-
     }
-
 
     // Bar chart config
     var barChartMargin = { top: 40, right: 10, bottom: 30, left: 50 };
@@ -44,7 +30,6 @@ $(document).ready(function () {
 
     var pieColor = d3.scaleOrdinal()
         .range(colorPalete);
-
 
     createBarChart(resultsBar, '#resultsBar');
     createPieChart(resultsPie, '#resultsPie');
@@ -120,7 +105,6 @@ $(document).ready(function () {
             .attr('class', 'y axis')
             .call(yAxis);
     }
-
 
     function createPieChart(data, domId) {
         // arc generator
