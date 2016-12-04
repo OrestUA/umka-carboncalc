@@ -134,10 +134,22 @@
 
 .innerContainer{
   background-color: #fff;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   height: 500px;
-  color: lightgreen;
+  color: #1bba16;
   border-radius: 10px;
   padding-top: 10px;
+}
+
+.questionOptionVariantBad{
+  color: tomato;
+}
+
+.questionOptionVariantGood{
+  color: #1bba16;
+}
+
+.questionOptionVariantCurrent{
+  color: black;
 }

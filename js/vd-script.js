@@ -7,24 +7,25 @@ var innerHeight=$('.innerContainer').height();
 //   return 'Are you sure you want to leave?';
 // });
 
+
+
 $('#no-travel').click(function() {
   if ($('#no-travel').prop('checked')) {
     $('.travel').each(function() {
-      $(this).attr('disabled', true);
+      $(this).attr('disabled', true).parent().removeClass('questionOptionVariantBad').addClass('questionOptionVariantGood');
     });
   }
   else {
     $('.travel').each(function() {
-      $(this).attr('disabled', false);
+      $(this).attr('disabled', false).parent().removeClass('questionOptionVariantGood').removeClass('questionOptionVariantBad');
     });
   }
-
 });
 
 $('#no-car').click(function() {
   if ($('#no-car').prop('checked')) {
     $('.car').each(function() {
-      $(this).attr('disabled', true);
+      $(this).attr('disabled', true).css('border-color', '#bdc3c7');
     });
   }
   else {
@@ -40,6 +41,13 @@ $('.gender').click(function() {
 
 $('.salary').click(function() {
   salary=$(this).val();
+});
+
+$("input[type=checkbox]").click(function() {
+  if($(this).prop('checked'))
+    $(this).parent().addClass('questionOptionVariantCurrent');
+  else
+    $(this).parent().removeClass('questionOptionVariantCurrent');
 });
 
 $(function(){
@@ -92,46 +100,46 @@ $(function(){
           var questionText=$('.question#q'+currentQuestion).text();
             switch(currentQuestion) {
               case 1:
-                if (isNaN(parseInt(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#rooms').css('border-color','tomato');
                   return;
                 }
                 user['rooms']=parseInt(firstInput);
                 break;
               case 2:
-                if (isNaN(parseInt(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#roommates').css('border-color','tomato');
                   return;
                 }
                 user['roommates']=parseInt(firstInput);
                 break;
               case 3:
-                if (isNaN(parseFloat(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#electricity').css('border-color','tomato');
                   return;
                 }
                 user['electricity']=parseFloat(firstInput);
                 break;
               case 4:
-                if (isNaN(parseFloat(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#gas').css('border-color','tomato');
                   return;
                 }
                 user['gas']=parseFloat(firstInput);
                 break;
               case 5:
-                if (isNaN(parseFloat(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#hotWater').css('border-color','tomato');
                   return;
                 }
                 user['hotWater']=parseFloat(firstInput);
                 break;
               case 6:
-                if (isNaN(parseFloat(kilos))){
+                if (!$.isNumeric(kilos)){
                   $('#kilos').css('border-color','tomato');
                   return;
                 }
-                if (isNaN(parseFloat(engine))){
+                if (!$.isNumeric(engine)){
                   $('#engine').css('border-color','tomato');
                   return;
                 }
@@ -140,17 +148,16 @@ $(function(){
                 break;
               case 7:
                 if (travel=='') {
-                  $('.questionOptionVariant#qov'+currentQuestion).css('color','tomato');
+                  $('.questionOptionVariant#qov'+currentQuestion).addClass('questionOptionVariantBad');
                   return;
                 }
                 if(!airTravel)
                   travel='';
                 user['countries']=travel;
                 user['airTravel']=airTravel;
-                alert(travel);
                 break;
               case 8:
-                if (isNaN(parseInt(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#age').css('border-color','tomato');
                   return;
                 }
