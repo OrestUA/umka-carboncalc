@@ -14,32 +14,6 @@
   background-image: url('../img/pbar.png');
 }
 
-.pbarItem{
-  height: 40px;
-  width: 40px;
-  border-radius: 55px;
-  border: 2px solid #6d6d6d;
-  display: inline-block;
-  line-height: 36px;
-  text-align: center;
-  font-weight: bold;
-  color: #6d6d6d;
-  font-size: 20px;
-  background-color: white;
-}
-
-.pbarItemVisited{
-  border-color: #6d6d6d;
-  color: #6d6d6d;
-  background-color: #adadad;
-}
-
-.pbarItemCurrent{
-  border-color: #6d6d6d;
-  color: white;
-  background-color: #0bb505;
-}
-
 .questionNum{
   margin-right: 35px;
   margin-top: 30px;
