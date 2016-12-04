@@ -4815,8 +4815,27 @@ footer p {
   color: #1bba16;
 }
 
+.charts-wrapper {
+  background-color: #fff;
+  width: 750px;  
+  margin: 0 auto;
+  height: 1125px; 
+  color: #74b974; 
+  border-radius: 10px; 
+  padding-top: 10px;
+}
+
 #resultsPie text {
   fill: #fff;
   font-size: 18px;
   font-weight: bold;
+}
+
+#resultsBar text {
+      font-size: 12px;
+    font-weight: bold;
+}
+
+.arc path {
+  stroke: #fff;
 }

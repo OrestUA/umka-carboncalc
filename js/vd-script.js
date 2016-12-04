@@ -3,9 +3,9 @@ var gender='';
 var salary='';
 var airTravel;
 var innerHeight=$('.innerContainer').height();
-$(window).bind('beforeunload',function(){
-  return 'are you sure you want to leave?';
-});
+// $(window).bind('beforeunload',function(){
+//   return 'Are you sure you want to leave?';
+// });
 
 $('#no-travel').click(function() {
   if ($('#no-travel').prop('checked')) {
@@ -169,8 +169,7 @@ $(function(){
                   return;
                 }
                 user['salary']=salary;
-                sendFormData();
-                break;
+                return sendFormData();                
               default:
                 break;
             }
@@ -215,15 +214,21 @@ $(function(){
       user.name = localStorage.getItem('name');
       user.email = localStorage.getItem('email');
       user.subscription = JSON.parse(localStorage.getItem('subscription'));
-      // console.log(11, user);
-      $.post( "http://172.23.76.243:8080/carbon_footprint", JSON.stringify(user), function(data) {
-        console.log(data);
-        // Put the object into storage
-        localStorage.setItem('resultData', JSON.stringify(data));
-        window.location.href = 'results.html';
-      })
-      .fail(function() {
-        console.error( "error" );
-      })
+      $.ajax({
+          type : "POST",
+          url : 'http://172.23.76.243:8080/carbon_footprint',
+          // dataType : "json",
+          contentType: "application/json; charset=utf-8",     
+          data : JSON.stringify(user),
+          success : function(data) {
+            console.log(data);
+            // Put the object into storage
+            localStorage.setItem('resultData', JSON.stringify(data));
+            window.location.href = 'results.html';
+          },
+          error : function(error) {
+            console.error( "error" );
+          },
+      });
     }
 });

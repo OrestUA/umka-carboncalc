@@ -1,62 +1,62 @@
-$(document).ready(function() {
-  var results = JSON.parse(localStorage.getItem('resultData'));
-  console.log(11, results);
-  resultsBar = [
-      { name: 'Tи', amount: 14},
-      { name: 'Україна', amount: 8},
-      { name: 'Світ', amount: 6},
-  ];
+$(document).ready(function () {
+    var results = JSON.parse(localStorage.getItem('resultData'));
+    console.log(11, results);
+    resultsBar = results.barChart;
+    //   [
+    //       { name: 'Tи', amount: 14},
+    //       { name: 'Україна', amount: 8},
+    //       { name: 'Світ', amount: 6},
+    //   ];
 
-  resultsPie = [
-      { name: 'Світло', amount: 9},
-      { name: 'Тепло', amount: 8},
-      { name: 'Авто', amount: 6},
-      { name: 'Газ', amount: 6}      
-  ];
+    resultsPie = results.pieChart;
+    //    [
+    //       { name: 'Світло', amount: 9},
+    //       { name: 'Тепло', amount: 8},
+    //       { name: 'Авто', amount: 6},
+    //       { name: 'Газ', amount: 6}      
+    //   ];
 
-  var colorPalete;
-  if (resultsBar[0].amount > resultsBar[2].amount) {
-      resultsBar[0].dangerLevel = true;
-      colorPalete = ['#7D0026', '#A10031', '#DC3165', '#E75984'];
-  } else {
-      resultsBar[0].dangerLevel = false;
-      colorPalete = ['#2D5700', '#447D06', '#7AB837', '#9CD55F'];
+    var colorPalete;
+    if (resultsBar[0].amount > resultsBar[2].amount) {
+        resultsBar[0].dangerLevel = true;
+        colorPalete = ['#7D0026', '#A10031', '#DC3165', '#E75984'];
+    } else {
+        resultsBar[0].dangerLevel = false;
+        colorPalete = ['#2D5700', '#447D06', '#7AB837', '#9CD55F'];
 
-  }
+    }
 
 
-  // Bar chart config
-  var barChartMargin = {top: 40, right: 10, bottom: 30, left: 30};
-  var barChartOptions = {
-      width: 700 - barChartMargin.right - barChartMargin.left,
-      height: 500 - barChartMargin.top - barChartMargin.bottom
-  };
+    // Bar chart config
+    var barChartMargin = { top: 40, right: 10, bottom: 30, left: 50 };
+    var barChartOptions = {
+        width: 700 - barChartMargin.right - barChartMargin.left,
+        height: 500 - barChartMargin.top - barChartMargin.bottom
+    };
 
-  // Pie chart config
-    var pieChartMargin = {top: 20, right: 20, bottom: 20, left: 20};
+    // Pie chart config
+    var pieChartMargin = { top: 20, right: 20, bottom: 20, left: 20 };
     var pieChartOptions = {
         width: 500 - pieChartMargin.right - pieChartMargin.left,
         height: 500 - pieChartMargin.top - pieChartMargin.bottom,
         radious: (500 - pieChartMargin.right - pieChartMargin.left) / 2
     };
 
-
-
     var pieColor = d3.scaleOrdinal()
         .range(colorPalete);
 
 
-  createBarChart(resultsBar, '#resultsBar');
-  createPieChart(resultsPie, '#resultsPie');
+    createBarChart(resultsBar, '#resultsBar');
+    createPieChart(resultsPie, '#resultsPie');
 
-   // Charts generators
-   function  createBarChart(data, domId) {
+    // Charts generators
+    function createBarChart(data, domId) {
         let svg = d3.select(domId)
             .append('svg')
-            .attr('width',  barChartOptions.width + barChartMargin.right + barChartMargin.left)
+            .attr('width', barChartOptions.width + barChartMargin.right + barChartMargin.left)
             .attr('height', barChartOptions.height + barChartMargin.top + barChartMargin.bottom)
             .append('g')
-                .attr('transform', 'translate(' + barChartMargin.left + ',' + barChartMargin.right +  ')');
+            .attr('transform', 'translate(' + barChartMargin.left + ',' + barChartMargin.right + ')');
 
         // define x and y scales
         let xScale = d3.scaleBand()
@@ -66,18 +66,18 @@ $(document).ready(function() {
         let yScale = d3.scaleLinear()
             .rangeRound([barChartOptions.height, 0]);
 
-         // define axis
-         let xAxis = d3.axisBottom()
-             .scale(xScale);
+        // define axis
+        let xAxis = d3.axisBottom()
+            .scale(xScale);
 
-         let yAxis = d3.axisLeft()
-              .scale(yScale)
+        let yAxis = d3.axisLeft()
+            .scale(yScale)
             //   .ticks(1);
-              .tickFormat(d3.format(",d"));
+            .tickFormat(d3.format(",d"));
 
-          // specify the domains of the x and y scales
-          xScale.domain(data.map((d) => d.name));
-          yScale.domain([0, d3.max(data, (d) => d.amount)]);
+        // specify the domains of the x and y scales
+        xScale.domain(data.map((d) => d.name));
+        yScale.domain([0, d3.max(data, (d) => d.amount)]);
 
         // draw the bars
         svg.selectAll('rect')
@@ -96,19 +96,19 @@ $(document).ready(function() {
             .attr('height', (d) => barChartOptions.height - yScale(d.amount))
             // .style('fill', (d, i) => 'rgb(135,206, ' + ((i * 40) + 100) + ')');             // color range
             .style('fill', (d, i) => {
-                switch(i) {
-                    case 0: 
+                switch (i) {
+                    case 0:
                         if (d.dangerLevel) {
                             return '#c90943';
                         } else {
                             return '#5E9C1C';
                         }
-                    case 1: 
+                    case 1:
                         return '#0097AA'
-                    case 2: 
+                    case 2:
                         return '#F29724'
                 }
-            }); 
+            });
 
         // draw the Axis
         svg.append('g')
@@ -128,52 +128,52 @@ $(document).ready(function() {
             .outerRadius(pieChartOptions.radious - 10)
             .innerRadius(0);
 
-         // arc for the labels position
-         let labelArc = d3.arc()
+        // arc for the labels position
+        let labelArc = d3.arc()
             .outerRadius(pieChartOptions.radious - 40)
             .innerRadius(pieChartOptions.radious - 40);
 
-         let pie = d3.pie()
-             .sort(null)
-             .value((d) => d.amount);
+        let pie = d3.pie()
+            .sort(null)
+            .value((d) => d.amount);
 
-          // define svg
-          let svg = d3.select(domId).append('svg')
-              .attr('width', pieChartOptions.width)
-              .attr('height', pieChartOptions.height)
+        // define svg
+        let svg = d3.select(domId).append('svg')
+            .attr('width', pieChartOptions.width)
+            .attr('height', pieChartOptions.height)
             .append('g')
-              .attr('transform', 'translate(' + pieChartOptions.width / 2 + ',' + pieChartOptions.height / 2 + ')');
+            .attr('transform', 'translate(' + pieChartOptions.width / 2 + ',' + pieChartOptions.height / 2 + ')');
 
-            // append g elements (arc)
-           let g = svg.selectAll('.arc')
-               .data(pie(data))
-             .enter().append('g')
-               .attr('class', 'arc');
+        // append g elements (arc)
+        let g = svg.selectAll('.arc')
+            .data(pie(data))
+            .enter().append('g')
+            .attr('class', 'arc');
 
-           // append the path to the arc
-           g.append('path')
-               .attr('d', arc)
-               .style('fill', (d) => pieColor(d.data.name))
-               .transition()                // for animation
-               .ease(d3.easeLinear)         // for animation
-               .duration(2000)              // for animation
-               .attrTween('d', pieTween);   // for animation
+        // append the path to the arc
+        g.append('path')
+            .attr('d', arc)
+            .style('fill', (d) => pieColor(d.data.name))
+            .transition()                // for animation
+            .ease(d3.easeLinear)         // for animation
+            .duration(2000)              // for animation
+            .attrTween('d', pieTween);   // for animation
 
-            // append the text(labels)
-            g.append('text')
-                .transition()               // for animation
-                .ease(d3.easeLinear)        // for animation
-                .duration(2000)             // for animation
-                .attr('transform', (d) => 'translate(' + labelArc.centroid(d) + ')')
-                .attr('dy', '.35em')
-                .text((d) => d.data.name )
-                .style('text-anchor', 'middle');
+        // append the text(labels)
+        g.append('text')
+            .transition()               // for animation
+            .ease(d3.easeLinear)        // for animation
+            .duration(2000)             // for animation
+            .attr('transform', (d) => 'translate(' + labelArc.centroid(d) + ')')
+            .attr('dy', '.35em')
+            .text((d) => d.data.name)
+            .style('text-anchor', 'middle');
 
-              // for animation  
-              function pieTween(b) {
-                b.innerRadius = 0;
-                let i = d3.interpolate({startAngle: 0, endEangle: 0}, b);
-                return (t) => arc(i(t));
-              }
+        // for animation  
+        function pieTween(b) {
+            b.innerRadius = 0;
+            let i = d3.interpolate({ startAngle: 0, endEangle: 0 }, b);
+            return (t) => arc(i(t));
+        }
     }
 });
