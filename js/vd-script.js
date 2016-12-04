@@ -2,6 +2,35 @@ var user={};
 $(window).bind('beforeunload',function(){
   return 'are you sure you want to leave?';
 });
+
+$('#no-travel').click(function() {
+  if ($('#no-travel').prop('checked')) {
+    $('.travel').each(function() {
+      $(this).attr('disabled', true);
+    });
+  }
+  else {
+    $('.travel').each(function() {
+      $(this).attr('disabled', false);
+    });
+  }
+
+});
+
+$('#no-car').click(function() {
+  if ($('#no-car').prop('checked')) {
+    $('.car').each(function() {
+      $(this).attr('disabled', true);
+    });
+  }
+  else {
+    $('.car').each(function() {
+      $(this).attr('disabled', false);
+    });
+  }
+});
+
+
 $(function(){
     var currentQuestion=1;
 
@@ -29,33 +58,50 @@ $(function(){
           $("li#pb"+currentQuestion).addClass('is-complete');
 
           firstInput=$('.questionOptionVariant#qov'+currentQuestion).children().first().val();
-          lastInput=$('.questionOptionVariant#qov'+currentQuestion).children().last().val();
-          
+          var travel='';
+          var engine;
+          var kilos;
+          if($('#no-car').prop('checked')){
+            engine=parseFloat('0.0');
+            kilos=parseFloat('0.0');
+          }
+          else {
+            engine=$('#engine').val();
+            kilos=$('#kilos').val();
+          }
+          if($('#no-travel').prop('checked'))
+            travel=$('#no-travel').val();
+          else {
+            $('input.travel:checked').each(function() {
+              travel+=$(this).val()+', ';
+            });
+            travel=travel.substring(0, travel.length - 2);
+          }
             switch(currentQuestion) {
               case 1:
-                user['rooms']=firstInput;
+                user['rooms']=parseInt(firstInput);
                 break;
               case 2:
-                user['roommates']=firstInput;
+                user['roommates']=parseInt(firstInput);
                 break;
               case 3:
-                user['electricity']=firstInput;
+                user['electricity']=parseFloat(firstInput);
                 break;
               case 4:
-                user['gas']=firstInput;
+                user['gas']=parseFloat(firstInput);
                 break;
               case 5:
-                user['hotWater']=firstInput;
+                user['hotWater']=parseFloat(firstInput);
                 break;
               case 6:
-                user['carEngineVolume']=firstInput;
-                user['carDistance']=lastInput;
+                user['carEngineVolume']=parseFloat(engine);
+                user['carDistance']=parseFloat(kilos);
                 break;
               case 7:
-                user['airTravel']=firstInput;
+                user['airTravel']=travel;
                 break;
               case 8:
-                user['age']=firstInput;
+                user['age']=parseInt(firstInput);
                 break;
               case 9:
                 user['gender']=$('input.gender:checked').val();
