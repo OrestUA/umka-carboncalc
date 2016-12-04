@@ -42,7 +42,7 @@
 
 .questionNum{
   margin-right: 35px;
-  vertical-align: top;
+  margin-top: 30px;
   height: inherit;
 }
 
@@ -59,7 +59,6 @@
 .question{
   position: absolute;
   visibility: hidden;
-
 }
 
 .questionOption{
@@ -183,4 +182,10 @@
 }
 
 .Progress {
+}
+
+@media only screen and (device-width: 768px) {
+  .Progress > li {
+    font-size: 0.7em;
+  }
 }
