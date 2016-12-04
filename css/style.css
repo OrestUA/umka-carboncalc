@@ -4798,44 +4798,48 @@ footer p {
     text-align: justify;
   }
 
-.homeHeader div:first-child{
-  font-size: 80px;
-}
+  .homeHeader div:first-child{
+    font-size: 80px;
+  }
 
-.homeHeader div:nth-child(0n+2){
-  font-size: 60px;
-}
+  .homeHeader div:nth-child(0n+2){
+    font-size: 60px;
+  }
 
-.homeHeader div:nth-child(0n+3){
-  font-size: 90px;
-  color: #1bba16;
-}
+  .homeHeader div:nth-child(0n+3){
+    font-size: 90px;
+    color: #1bba16;
+  }
 
-.homeHeader div:last-child{
-  color: #1bba16;
-}
+  .homeHeader div:last-child{
+    color: #1bba16;
+  }
 
-.charts-wrapper {
-  background-color: #fff;
-  width: 750px;  
-  margin: 0 auto;
-  height: 1125px; 
-  color: #74b974; 
-  border-radius: 10px; 
-  padding-top: 10px;
-}
+  .team-photo {
+    padding-top: 20%;
+  }
 
-#resultsPie text {
-  fill: #fff;
-  font-size: 18px;
-  font-weight: bold;
-}
+  .charts-wrapper {
+    background-color: #fff;
+    width: 750px;  
+    margin: 0 auto;
+    height: 1125px; 
+    color: #74b974; 
+    border-radius: 10px; 
+    padding-top: 10px;
+  }
 
-#resultsBar text {
-      font-size: 12px;
+  #resultsPie text {
+    fill: #fff;
+    font-size: 18px;
     font-weight: bold;
-}
+  }
 
-.arc path {
-  stroke: #fff;
-}
+  #resultsBar text {
+        font-size: 12px;
+      font-weight: bold;
+  }
+
+  .arc path {
+    stroke: #fff;
+  }
