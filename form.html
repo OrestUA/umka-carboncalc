@@ -74,130 +74,164 @@
 
 		</div>
 	</nav>
-  <div class="container">
-        <h3 style="text-align:center;margin-bottom:25px;">Анкета</h3>
-        <div class="questionContainer">
-          <ol class="Progress Progress--medium">
-            <li class="is-active" data-step="1" id="pb1">
-            </li>
-            <li data-step="2" id="pb2">
-            </li>
-            <li data-step="3" id="pb3">
-            </li>
-            <li data-step="4" id="pb4">
-            </li>
-            <li data-step="5" id="pb5">
-            </li>
-            <li data-step="6" id="pb6">
-            </li>
-            <li data-step="7" id="pb7">
-            </li>
-            <li data-step="8" id="pb8">
-            </li>
-            <li data-step="9" id="pb9">
-            </li>
-            <li data-step="10" id="pb10">
-            </li>
-          </ol>
-          <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" style="width:0%" id="mobileProgressBar"></div>
-            <div class="progress-bar" role="progressbar" style="width:10%" id="mobileProgressBarCurrent"></div>
+  <div class="intro-header">
+      <div class="innerContainer">
+          <h3 style="margin-bottom:20px;">Анкета</h3>
+          <div class="questionContainer">
+            <ol class="Progress Progress--medium">
+                  <li class="is-active" data-step="1" id="pb1">
+                  </li>
+                  <li data-step="2" id="pb2">
+                  </li>
+                  <li data-step="3" id="pb3">
+                  </li>
+                  <li data-step="4" id="pb4">
+                  </li>
+                  <li data-step="5" id="pb5">
+                  </li>
+                  <li data-step="6" id="pb6">
+                  </li>
+                  <li data-step="7" id="pb7">
+                  </li>
+                  <li data-step="8" id="pb8">
+                  </li>
+                  <li data-step="9" id="pb9">
+                  </li>
+                  <li data-step="10" id="pb10">
+                  </li>
+                </ol>
+            <div class="progress">
+                  <div class="progress-bar progress-bar-success" role="progressbar" style="width:0%" id="mobileProgressBar"></div>
+                  <div class="progress-bar" role="progressbar" style="width:10%" id="mobileProgressBarCurrent"></div>
+                </div>
+            <h4 class="questionNum pull-left"></h4>
+            <div class="questionBlock">
+                  <!-- Список питаннь -->
+                  <div class="question" id="q1">
+                    Вкажіть, будь ласка, кількість кімнат у вашій квартирі
+                  </div>
+                  <div class="question" id="q2">
+                    Вкажіть, будь ласка, кількість людей, що мешкає у вашій квартирі
+                  </div>
+                  <div class="question" id="q3">
+                    Вкажіть, будь ласка, кількість електроенергії, спожитої за рік у kWh
+                  </div>
+                  <div class="question" id="q4">
+                    Вкажіть, будь ласка, об'єм газу, спожитого за рік у м<sup>3</sup>
+                  </div>
+                  <div class="question" id="q5">
+                    Вкажіть, будь ласка, кількість гарячої води, спожитої за рік у м<sup>3</sup>
+                  </div>
+                  <div class="question" id="q6">
+                    Якщо у вас є автомобіль - надайте, будь ласка, його характеристики
+                  </div>
+                  <div class="question" id="q7">
+                    Чи подорожуєте ви літаком? Якщо так, то в які країни?
+                  </div>
+                  <div class="question" id="q8">
+                    Вік
+                  </div>
+                  <div class="question" id="q9">
+                    Стать
+                  </div>
+                  <div class="question" id="q10">
+                    Ваш щомісячний дохід:
+                  </div>
+                  <!-- Список питаннь -->
+                  <div class="questionOption">
+                    <!-- Список відвопідей -->
+                    <div class="questionOptionVariant" id="qov1">
+                      <input type="text" class="form-control questionForm" name="name"  id="rooms">
+                    </div>
+                    <div class="questionOptionVariant" id="qov2">
+                      <input type="text" class="form-control questionForm" name="name"  id="roommates">
+                    </div>
+                    <div class="questionOptionVariant" id="qov3">
+                      <input type="text" class="form-control questionForm" name="name"  id="electricity">
+                    </div>
+                    <div class="questionOptionVariant" id="qov4">
+                      <input type="text" class="form-control questionForm" name="name"  id="gas">
+                    </div>
+                    <div class="questionOptionVariant" id="qov5">
+                      <input type="text" class="form-control questionForm" name="name"  id="hotWater">
+                    </div>
+                    <div class="questionOptionVariant" id="qov6">
+                      <div>
+                        <input value="Не подорожую" name="question" type="checkbox" id="no-car"/>
+                        <label>Нема машини</label>
+                      </div>
+                      <div>
+                        <span>Кількість пробігу за рік в км: </span><input type="text" class="form-control questionForm car" name="name" style="margin-top:10px;" id="kilos">
+                      </div>
+                      <div>
+                        <span>Об'єм двигуна: </span><input type="text" class="form-control questionForm car" name="name"  id="engine">
+                      </div>
+                    </div>
+                    <div class="questionOptionVariant" id="qov7">
+                      <div>
+                        <input value="Не подорожую" name="question" type="checkbox" id="no-travel"/>
+                        <label>Не подорожую</label>
+                      </div>
+                      <div>
+                        <input value="Австралія і Океанія" name="question" type="checkbox" class="travel"/>
+                        <label>Австралія і Океанія</label>
+                      </div>
+                      <div>
+                        <input value="Азія" name="question"type="checkbox" class="travel"/>
+                        <label>Азія</label>
+                      </div>
+                      <div>
+                        <input value="Північна Америка" name="question"type="checkbox" class="travel"/>
+                        <label>Північна Америка</label>
+                      </div>
+                      <div>
+                        <input value="Південна Америка" name="question" type="checkbox" class="travel"/>
+                        <label>Південна Америка</label>
+                      </div>
+                      <div>
+                        <input value="Африка" name="question"type="checkbox" class="travel"/>
+                        <label>Африка</label>
+                      </div>
+                      <div>
+                        <input value="Європа" name="question"type="checkbox" class="travel"/>
+                        <label>Європа</label>
+                      </div>
+                    </div>
+                    <div class="questionOptionVariant" id="qov8">
+                      <input type="text" class="form-control questionForm" name="name"  id="age">
+                    </div>
+                    <div class="questionOptionVariant" id="qov9">
+                      <div>
+                        <input value="male" name="question" type="radio" class="gender"/>
+                        <label>Чоловіча</label>
+                      </div>
+                      <div>
+                        <input value="female" name="question"type="radio" class="gender"/>
+                        <label>Жіноча</label>
+                      </div>
+                    </div>
+                    <div class="questionOptionVariant" id="qov10">
+                      <div>
+                        <input value="500" name="question" type="radio" class="salary"/>
+                        <label>Менше $500</label>
+                      </div>
+                      <div>
+                        <input value="500-1000" name="question"type="radio" class="salary"/>
+                        <label>$500-1000</label>
+                      </div>
+                      <div>
+                        <input value="1000" name="question"type="radio" class="salary"/>
+                        <label>1000</label>
+                      </div>
+                    </div>
+                      <!-- Список відвопідей -->
+                      <button type="button" class="btn btn-embossed btn-primary" name="button" id="questionButton">Далі <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                  </div>
+                </div>
           </div>
-          <h4 class="questionNum"></h4>
-          <div class="questionBlock">
-            <!-- Список питаннь -->
-            <div class="question" id="q1">
-              Вкажіть, будь ласка, кількість кімнат у вашій квартирі
-            </div>
-            <div class="question" id="q2">
-              Вкажіть, будь ласка, кількість людей, що мешкає у вашій квартирі
-            </div>
-            <div class="question" id="q3">
-              Вкажіть, будь ласка, кількість електроенергії, спожитої за рік у kWh
-            </div>
-            <div class="question" id="q4">
-              Вкажіть, будь ласка, об'єм газу, спожитого за рік у м<sup>3</sup>
-            </div>
-            <div class="question" id="q5">
-              Вкажіть, будь ласка, кількість гарячої води, спожитої за рік у м<sup>3</sup>
-            </div>
-            <div class="question" id="q6">
-              Якщо у вас є автомобіль - надайте, будь ласка, його характеристики
-            </div>
-            <div class="question" id="q7">
-              Чи подорожуєте ви літаком? Якщо так, то в які країни?
-            </div>
-            <div class="question" id="q8">
-              Вік
-            </div>
-            <div class="question" id="q9">
-              Стать
-            </div>
-            <div class="question" id="q10">
-              Ваш щомісячний дохід:
-            </div>
-            <!-- Список питаннь -->
-            <div class="questionOption">
-              <!-- Список відвопідей -->
-              <div class="questionOptionVariant" id="qov1">
-                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="3">
-              </div>
-              <div class="questionOptionVariant" id="qov2">
-                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="4">
-              </div>
-              <div class="questionOptionVariant" id="qov3">
-                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="10">
-              </div>
-              <div class="questionOptionVariant" id="qov4">
-                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="15">
-              </div>
-              <div class="questionOptionVariant" id="qov5">
-                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="3">
-              </div>
-              <div class="questionOptionVariant" id="qov6">
-                <div>
-                  <span>Кількість пробігу за рік в км: </span><input type="text" class="form-control questionForm" name="name" style="margin-top:10px;" id="inputName" placeholder="50000">
-                </div>
-                <div>
-                  <span>Об'єм двигуна: </span><input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="1.2">
-                </div>
-              </div>
-              <div class="questionOptionVariant" id="qov7">
-                <input type="text" class="form-control questionForm" name="name" style="width:inherit;" id="inputName" placeholder="Америка, Бразилія">
-              </div>
-              <div class="questionOptionVariant" id="qov8">
-                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="25">
-              </div>
-              <div class="questionOptionVariant" id="qov9">
-                <div>
-                  <input value="male" name="question" type="radio" class="gender"/>
-                  <label>Чоловіча</label>
-                </div>
-                <div>
-                  <input value="female" name="question"type="radio" class="gender"/>
-                  <label>Жіноча</label>
-                </div>
-              </div>
-              <div class="questionOptionVariant" id="qov10">
-                <div>
-                  <input value="500" name="question" type="radio" class="salary"/>
-                  <label>Менше $500</label>
-                </div>
-                <div>
-                  <input value="500-1000" name="question"type="radio" class="salary"/>
-                  <label>$500-1000</label>
-                </div>
-                <div>
-                  <input value="1000" name="question"type="radio" class="salary"/>
-                  <label>1000</label>
-                </div>
-              </div>
-                <!-- Список відвопідей -->
-                <button type="button" class="btn btn-embossed btn-primary" name="button" id="questionButton">Далі <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-            </div>
-          </div>
-        </div>
+      </div>
   </div>
+
   <footer class="footer">
         <div class="container">
 		        <img src="img/umka-logo.png" alt="umka" height="50">
