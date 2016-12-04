@@ -14,10 +14,6 @@
   background-image: url('../img/pbar.png');
 }
 
-.progress-bar{
-  background-color: #337ab7;
-}
-
 .pbarItem{
   height: 40px;
   width: 40px;

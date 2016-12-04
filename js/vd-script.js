@@ -1,4 +1,7 @@
 var user={};
+$(window).bind('beforeunload',function(){
+  return 'are you sure you want to leave?';
+});
 $(function(){
     var currentQuestion=1;
 
