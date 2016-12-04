@@ -1,19 +1,8 @@
 .questionContainer{
   width: 100%;
   padding: 0 10% 0 10%;
-  margin-bottom: 150px;
+  text-align: left;
 }
-
-.pbar{
-  width: 100%;
-  display: flex;
-
-  -webkit-flex-flow: row wrap;
-  justify-content: space-between;
-  margin-bottom: 25px;
-  background-image: url('../img/pbar.png');
-}
-
 .questionNum{
   margin-right: 35px;
   margin-top: 30px;
@@ -96,7 +85,7 @@
   top: 1.25em;
   left: 50%;
   margin-left: 1.5em\9;
-  z-index: -1;
+  z-index: 0;
 }
 .Progress > li:last-child:after {
   display: none;
@@ -144,5 +133,5 @@
 }
 
 .outerContainer{
-  
+
 }
