@@ -1,6 +1,7 @@
 .questionContainer{
   width: 100%;
-  padding: 0 50px 0 50px;
+  padding: 0 10% 0 10%;
+  margin-bottom: 150px;
 }
 
 .pbar{
@@ -8,38 +9,40 @@
   display: flex;
 
   -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 25px;
+  background-image: url('../img/pbar.png');
 }
 
 .pbarItem{
   height: 40px;
   width: 40px;
   border-radius: 55px;
-  border: 2px solid black;
+  border: 2px solid #6d6d6d;
   display: inline-block;
   line-height: 36px;
   text-align: center;
   font-weight: bold;
-  color: black;
+  color: #6d6d6d;
   font-size: 20px;
+  background-color: white;
 }
 
 .pbarItemVisited{
   border-color: #6d6d6d;
   color: #6d6d6d;
-  background-color: #969696;
+  background-color: #adadad;
 }
 
 .pbarItemCurrent{
-  border-color: #bababa;
+  border-color: #6d6d6d;
   color: white;
-  background-color: green;
+  background-color: #0bb505;
 }
 
 .questionNum{
   margin-right: 35px;
-  vertical-align: top;
+  margin-top: 30px;
   height: inherit;
 }
 
@@ -56,7 +59,6 @@
 .question{
   position: absolute;
   visibility: hidden;
-
 }
 
 .questionOption{
@@ -65,6 +67,11 @@
 .questionOptionVariant{
   visibility: hidden;
   position: absolute;
+  width: 100%;
+}
+
+.questionForm{
+  width: 150px;
 }
 
 #qov1{
@@ -72,6 +79,113 @@
 }
 
 #questionButton{
-  width: 100px;
-  text-align: left;
+  width: 150px;
+  display: inline-block;
+}
+
+#skipButton{
+}
+
+.footer{
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+@media only screen and (device-width: 375px) {
+  .pwrap{
+    padding: 0 10% 0 10%;
+  }
+}
+
+@media only screen and (device-width: 425px) {
+  .pwrap{
+    padding: 0 10% 0 10%;
+  }
+}
+
+.Progress {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  color: #849397;
+}
+.Progress > li {
+  position: relative;
+  display: table-cell;
+  text-align: center;
+  font-size: 0.8em;
+}
+.Progress > li:before {
+  content: attr(data-step);
+  display: block;
+  margin: 0 auto;
+  background: #DFE3E4;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  margin-bottom: 0.25em;
+  line-height: 3em;
+  border-radius: 100%;
+  position: relative;
+  z-index: 1000;
+}
+.Progress > li:after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: #DFE3E4;
+  width: 100%;
+  height: 0.5em;
+  top: 1.25em;
+  left: 50%;
+  margin-left: 1.5em\9;
+  z-index: -1;
+}
+.Progress > li:last-child:after {
+  display: none;
+}
+.Progress > li.is-complete {
+  color: #2ECC71;
+}
+.Progress > li.is-complete:before, .Progress > li.is-complete:after {
+  color: #FFF;
+  background: #2ECC71;
+}
+.Progress > li.is-active {
+  color: #3498DB;
+}
+.Progress > li.is-active:before {
+  color: #FFF;
+  background: #3498DB;
+}
+
+/**
+ * Needed for IE8
+ */
+.Progress__last:after {
+  display: none !important;
+}
+
+/**
+ * Size Extensions
+ */
+.Progress--medium {
+  font-size: 1.5em;
+}
+
+.Progress--large {
+  font-size: 2em;
+}
+
+.Progress {
+}
+
+@media only screen and (device-width: 768px) {
+  .Progress > li {
+    font-size: 0.7em;
+  }
 }

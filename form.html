@@ -26,7 +26,6 @@
 
   <!-- Owl-Carousel -->
    <link href="css/custom.css" rel="stylesheet">
-    <link href="css/vd-style.css" rel="stylesheet">
  <link href="css/owl.carousel.css" rel="stylesheet">
    <link href="css/owl.theme.css" rel="stylesheet">
  <link href="css/style.css" rel="stylesheet">
@@ -47,47 +46,100 @@
    <script src="js/html5shiv.js"></script>
  <![endif]-->
 
+ <link href="css/vd-style.css" rel="stylesheet">
 </head>
 
 <body>
+  <nav class="navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">
+					<img src="img/calc-logo.png" alt="calc-logo">
+					<img src="img/umka-logo.png" alt="umka-logo">
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class="menuItem"><a href="#about-us">Хто ми?</a></li>
+					<li class="menuItem"><a href="#recommendations">Рекомендації для населення</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
   <div class="container">
-        <h3 style="text-align:center;">Анкета</h3>
+        <h3 style="text-align:center;margin-bottom:25px;">Анкета</h3>
         <div class="questionContainer">
-          <div class="pbar">
-            <div class="pbarItem pbarItemCurrent" id="pb1">
-              1
-            </div>
-            <div class="pbarItem" id="pb2">
-              2
-            </div>
-            <div class="pbarItem" id="pb3">
-              3
-            </div>
-            <div class="pbarItem" id="pb4">
-              4
-            </div>
-            <div class="pbarItem" id="pb5">
-              5
-            </div>
-            <div class="pbarItem" id="pb6">
-              6
-            </div>
-            <div class="pbarItem" id="pb7">
-              7
-            </div>
-            <div class="pbarItem" id="pb8">
-              8
-            </div>
-            <div class="pbarItem" id="pb9">
-              9
-            </div>
-            <div class="pbarItem" id="pb10">
-              10
-            </div>
+          <!--
+          <div class="pwrap">
+            <div class="pbar">
+                <div class="pbarItem pbarItemCurrent" id="pb1">
+                  1
+                </div>
+                <div class="pbarItem" id="pb2">
+                  2
+                </div>
+                <div class="pbarItem" id="pb3">
+                  3
+                </div>
+                <div class="pbarItem" id="pb4">
+                  4
+                </div>
+                <div class="pbarItem" id="pb5">
+                  5
+                </div>
+                <div class="pbarItem" id="pb6">
+                  6
+                </div>
+                <div class="pbarItem" id="pb7">
+                  7
+                </div>
+                <div class="pbarItem" id="pb8">
+                  8
+                </div>
+                <div class="pbarItem" id="pb9">
+                  9
+                </div>
+                <div class="pbarItem" id="pb10">
+                  10
+                </div>
+              </div>
           </div>
-          <h4 class="questionNum">
-            Питання
-          </h4>
+          -->
+          <ol class="Progress Progress--medium">
+            <li class="is-active" data-step="1" id="pb1">
+            </li>
+            <li data-step="2" id="pb2">
+            </li>
+            <li data-step="3" id="pb3">
+            </li>
+            <li data-step="4" id="pb4">
+            </li>
+            <li data-step="5" id="pb5">
+            </li>
+            <li data-step="6" id="pb6">
+            </li>
+            <li data-step="7" id="pb7">
+            </li>
+            <li data-step="8" id="pb8">
+            </li>
+            <li data-step="9" id="pb9">
+            </li>
+            <li data-step="10" id="pb10">
+            </li>
+          </ol>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" style="width:0%" id="mobileProgressBar"></div>
+            <div class="progress-bar" role="progressbar" style="width:10%" id="mobileProgressBarCurrent"></div>
+          </div>
+          <h4 class="questionNum"></h4>
           <div class="questionBlock">
             <!-- Список питаннь -->
             <div class="question" id="q1">
@@ -124,50 +176,73 @@
             <div class="questionOption">
               <!-- Список відвопідей -->
               <div class="questionOptionVariant" id="qov1">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="3">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="3">
               </div>
               <div class="questionOptionVariant" id="qov2">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="4">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="4">
               </div>
               <div class="questionOptionVariant" id="qov3">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="10">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="10">
               </div>
               <div class="questionOptionVariant" id="qov4">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="15">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="15">
               </div>
               <div class="questionOptionVariant" id="qov5">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="3">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="3">
               </div>
               <div class="questionOptionVariant" id="qov6">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="Об'єм двигуна">
-                <input type="text" class="form-control" name="name" style="width:300px;margin-top:10px;" id="inputName" placeholder="Кількість пробігу за рік в км">
+                <div>
+                  <span>Кількість пробігу за рік в км: </span><input type="text" class="form-control questionForm" name="name" style="margin-top:10px;" id="inputName" placeholder="50000">
+                </div>
+                <div>
+                  <span>Об'єм двигуна: </span><input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="1.2">
+                </div>
               </div>
               <div class="questionOptionVariant" id="qov7">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="Америка, Бразилія">
+                <input type="text" class="form-control questionForm" name="name" style="width:inherit;" id="inputName" placeholder="Америка, Бразилія">
               </div>
               <div class="questionOptionVariant" id="qov8">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="25">
+                <input type="text" class="form-control questionForm" name="name"  id="inputName" placeholder="25">
               </div>
               <div class="questionOptionVariant" id="qov9">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="Чоловіча">
+                <div>
+                  <input value="male" name="question" type="radio" class="gender"/>
+                  <label>Чоловіча</label>
+                </div>
+                <div>
+                  <input value="female" name="question"type="radio" class="gender"/>
+                  <label>Жіноча</label>
+                </div>
               </div>
               <div class="questionOptionVariant" id="qov10">
-                <input type="text" class="form-control" name="name" style="width:300px;" id="inputName" placeholder="500$">
+                <div>
+                  <input value="500" name="question" type="radio" class="salary"/>
+                  <label>Менше $500</label>
+                </div>
+                <div>
+                  <input value="500-1000" name="question"type="radio" class="salary"/>
+                  <label>$500-1000</label>
+                </div>
+                <div>
+                  <input value="1000" name="question"type="radio" class="salary"/>
+                  <label>1000</label>
+                </div>
               </div>
-
-
-
-
-
-
                 <!-- Список відвопідей -->
-                <button type="button" class="btn btn-primary questionButton" name="button">Далі <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-embossed btn-primary" name="button" id="questionButton">Далі <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                <!--
+                <button type="button" class="btn btn-embossed btn-primary" name="button" id="skipButton">Пропустити <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                -->
             </div>
           </div>
         </div>
-    </div>
-
   </div>
+  <footer class="footer">
+        <div class="container">
+		        <img src="img/umka-logo.png" alt="umka" height="50">
+              <span class="footer-title pull-right">Made by Charity Hackaton</span>
+        </div>
+  </footer>
    <!-- JavaScript -->
    <script src="js/jquery-1.10.2.js"></script>
    <script src="js/bootstrap.js"></script>
