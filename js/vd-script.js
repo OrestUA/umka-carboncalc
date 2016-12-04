@@ -1,6 +1,7 @@
 var user={};
 var gender='';
 var salary='';
+var innerHeight=$('.innerContainer').height();
 $(window).bind('beforeunload',function(){
   return 'are you sure you want to leave?';
 });
@@ -167,6 +168,20 @@ $(function(){
             }
           $("li#pb"+currentQuestion).removeClass('is-active');
           $("li#pb"+currentQuestion).addClass('is-complete');
+          var add;
+          if(currentQuestion==5){
+            add=innerHeight+50;
+            $('.innerContainer').height(add);
+          }
+          if(currentQuestion==6)
+          {
+            add=innerHeight+120;
+            $('.innerContainer').height(add);
+          }
+          if(currentQuestion==7)
+          {
+            $('.innerContainer').height(innerHeight);
+          }
           currentQuestion+=1;
           $("li#pb"+currentQuestion).addClass('is-active');
           $('.question').each(function() {

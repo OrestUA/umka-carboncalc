@@ -132,6 +132,12 @@
   }
 }
 
-.outerContainer{
-
+.innerContainer{
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  height: 500px;
+  color: lightgreen;
+  border-radius: 10px;
+  padding-top: 10px;
 }
