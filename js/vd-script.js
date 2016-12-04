@@ -3,11 +3,10 @@ var gender='';
 var salary='';
 var airTravel;
 var innerHeight=$('.innerContainer').height();
+var ENDPOINT_URI = 'http://172.23.76.243:8080/carbon_footprint';
 // $(window).bind('beforeunload',function(){
 //   return 'Are you sure you want to leave?';
 // });
-
-
 
 $('#no-travel').click(function() {
   if ($('#no-travel').prop('checked')) {
@@ -223,8 +222,7 @@ $(function(){
       user.subscription = JSON.parse(localStorage.getItem('subscription'));
       $.ajax({
           type : "POST",
-          url : 'http://172.23.76.243:8080/carbon_footprint',
-          // dataType : "json",
+          url : ENDPOINT_URI,         
           contentType: "application/json; charset=utf-8",     
           data : JSON.stringify(user),
           success : function(data) {           
