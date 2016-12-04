@@ -1,6 +1,7 @@
 var user={};
 var gender='';
 var salary='';
+var airTravel;
 var innerHeight=$('.innerContainer').height();
 $(window).bind('beforeunload',function(){
   return 'are you sure you want to leave?';
@@ -76,9 +77,12 @@ $(function(){
             engine=$('#engine').val();
             kilos=$('#kilos').val();
           }
-          if($('#no-travel').prop('checked'))
+          if($('#no-travel').prop('checked')){
             travel=$('#no-travel').val();
+            airTravel=false;
+          }
           else {
+            airTravel=true;
             $('input.travel:checked').each(function() {
               travel+=$(this).val()+', ';
             });
@@ -139,7 +143,11 @@ $(function(){
                   $('.questionOptionVariant#qov'+currentQuestion).css('color','tomato');
                   return;
                 }
-                user['airTravel']=travel;
+                if(!airTravel)
+                  travel='';
+                user['countries']=travel;
+                user['airTravel']=airTravel;
+                alert(travel);
                 break;
               case 8:
                 if (isNaN(parseInt(firstInput))){
