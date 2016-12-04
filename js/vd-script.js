@@ -1,4 +1,6 @@
 var user={};
+var gender='';
+var salary='';
 $(window).bind('beforeunload',function(){
   return 'are you sure you want to leave?';
 });
@@ -30,6 +32,13 @@ $('#no-car').click(function() {
   }
 });
 
+$('.gender').click(function() {
+  gender=$(this).val();
+});
+
+$('.salary').click(function() {
+  salary=$(this).val();
+});
 
 $(function(){
     var currentQuestion=1;
@@ -54,16 +63,13 @@ $(function(){
     var lastInput=$('.questionOptionVariant#qov'+currentQuestion).children().last().val();
 
     $('#questionButton').click(function() {
-          $("li#pb"+currentQuestion).removeClass('is-active');
-          $("li#pb"+currentQuestion).addClass('is-complete');
-
           firstInput=$('.questionOptionVariant#qov'+currentQuestion).children().first().val();
           var travel='';
-          var engine;
-          var kilos;
+          var engine="lorem ipsum";
+          var kilos="lorem ipsum";
           if($('#no-car').prop('checked')){
-            engine=parseFloat('0.0');
-            kilos=parseFloat('0.0');
+            engine='0.0';
+            kilos='0.0';
           }
           else {
             engine=$('#engine').val();
@@ -77,43 +83,90 @@ $(function(){
             });
             travel=travel.substring(0, travel.length - 2);
           }
+          var errorInput='Неправильний ввід даних, будь ласка, повторіть ще раз.';
+          var questionText=$('.question#q'+currentQuestion).text();
             switch(currentQuestion) {
               case 1:
+                if (isNaN(parseInt(firstInput))){
+                  $('#rooms').css('border-color','tomato');
+                  return;
+                }
                 user['rooms']=parseInt(firstInput);
                 break;
               case 2:
+                if (isNaN(parseInt(firstInput))){
+                  $('#roommates').css('border-color','tomato');
+                  return;
+                }
                 user['roommates']=parseInt(firstInput);
                 break;
               case 3:
+                if (isNaN(parseFloat(firstInput))){
+                  $('#electricity').css('border-color','tomato');
+                  return;
+                }
                 user['electricity']=parseFloat(firstInput);
                 break;
               case 4:
+                if (isNaN(parseFloat(firstInput))){
+                  $('#gas').css('border-color','tomato');
+                  return;
+                }
                 user['gas']=parseFloat(firstInput);
                 break;
               case 5:
+                if (isNaN(parseFloat(firstInput))){
+                  $('#hotWater').css('border-color','tomato');
+                  return;
+                }
                 user['hotWater']=parseFloat(firstInput);
                 break;
               case 6:
+                if (isNaN(parseFloat(kilos))){
+                  $('#kilos').css('border-color','tomato');
+                  return;
+                }
+                if (isNaN(parseFloat(engine))){
+                  $('#engine').css('border-color','tomato');
+                  return;
+                }
                 user['carEngineVolume']=parseFloat(engine);
                 user['carDistance']=parseFloat(kilos);
                 break;
               case 7:
+                if (travel=='') {
+                  $('.questionOptionVariant#qov'+currentQuestion).css('color','tomato');
+                  return;
+                }
                 user['airTravel']=travel;
                 break;
               case 8:
+                if (isNaN(parseInt(firstInput))){
+                  $('#age').css('border-color','tomato');
+                  return;
+                }
                 user['age']=parseInt(firstInput);
                 break;
               case 9:
-                user['gender']=$('input.gender:checked').val();
+                if (gender=='') {
+                  $('.questionOptionVariant#qov'+currentQuestion).css('color','tomato');
+                  return;
+                }
+                user['gender']=gender;
                 break;
               case 10:
-                user['salary']=$('input.salary:checked').val();
+                if (salary=='') {
+                  $('.questionOptionVariant#qov'+currentQuestion).css('color','tomato');
+                  return;
+                }
+                user['salary']=salary;
                 sendFormData();
                 break;
               default:
                 break;
             }
-
+          $("li#pb"+currentQuestion).removeClass('is-active');
+          $("li#pb"+currentQuestion).addClass('is-complete');
           currentQuestion+=1;
           $("li#pb"+currentQuestion).addClass('is-active');
           $('.question').each(function() {
