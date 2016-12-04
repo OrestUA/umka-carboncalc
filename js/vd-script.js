@@ -100,46 +100,46 @@ $(function(){
           var questionText=$('.question#q'+currentQuestion).text();
             switch(currentQuestion) {
               case 1:
-                if (isNaN(parseInt(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#rooms').css('border-color','tomato');
                   return;
                 }
                 user['rooms']=parseInt(firstInput);
                 break;
               case 2:
-                if (isNaN(parseInt(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#roommates').css('border-color','tomato');
                   return;
                 }
                 user['roommates']=parseInt(firstInput);
                 break;
               case 3:
-                if (isNaN(parseFloat(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#electricity').css('border-color','tomato');
                   return;
                 }
                 user['electricity']=parseFloat(firstInput);
                 break;
               case 4:
-                if (isNaN(parseFloat(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#gas').css('border-color','tomato');
                   return;
                 }
                 user['gas']=parseFloat(firstInput);
                 break;
               case 5:
-                if (isNaN(parseFloat(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#hotWater').css('border-color','tomato');
                   return;
                 }
                 user['hotWater']=parseFloat(firstInput);
                 break;
               case 6:
-                if (isNaN(parseFloat(kilos))){
+                if (!$.isNumeric(kilos)){
                   $('#kilos').css('border-color','tomato');
                   return;
                 }
-                if (isNaN(parseFloat(engine))){
+                if (!$.isNumeric(engine)){
                   $('#engine').css('border-color','tomato');
                   return;
                 }
@@ -158,7 +158,7 @@ $(function(){
                 alert(travel);
                 break;
               case 8:
-                if (isNaN(parseInt(firstInput))){
+                if (!$.isNumeric(firstInput)){
                   $('#age').css('border-color','tomato');
                   return;
                 }
