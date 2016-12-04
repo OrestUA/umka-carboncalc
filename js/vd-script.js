@@ -155,7 +155,6 @@ $(function(){
                   travel='';
                 user['countries']=travel;
                 user['airTravel']=airTravel;
-                alert(travel);
                 break;
               case 8:
                 if (!$.isNumeric(firstInput)){
