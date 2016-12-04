@@ -4814,3 +4814,9 @@ footer p {
 .homeHeader div:last-child{
   color: #1bba16;
 }
+
+#resultsPie text {
+  fill: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
