@@ -7,24 +7,25 @@ $(window).bind('beforeunload',function(){
   return 'are you sure you want to leave?';
 });
 
+
+
 $('#no-travel').click(function() {
   if ($('#no-travel').prop('checked')) {
     $('.travel').each(function() {
-      $(this).attr('disabled', true);
+      $(this).attr('disabled', true).parent().removeClass('questionOptionVariantBad').addClass('questionOptionVariantGood');
     });
   }
   else {
     $('.travel').each(function() {
-      $(this).attr('disabled', false);
+      $(this).attr('disabled', false).parent().removeClass('questionOptionVariantGood').removeClass('questionOptionVariantBad');
     });
   }
-
 });
 
 $('#no-car').click(function() {
   if ($('#no-car').prop('checked')) {
     $('.car').each(function() {
-      $(this).attr('disabled', true);
+      $(this).attr('disabled', true).css('border-color', '#bdc3c7');
     });
   }
   else {
@@ -40,6 +41,13 @@ $('.gender').click(function() {
 
 $('.salary').click(function() {
   salary=$(this).val();
+});
+
+$("input[type=checkbox]").click(function() {
+  if($(this).prop('checked'))
+    $(this).parent().addClass('questionOptionVariantCurrent');
+  else
+    $(this).parent().removeClass('questionOptionVariantCurrent');
 });
 
 $(function(){
@@ -140,7 +148,7 @@ $(function(){
                 break;
               case 7:
                 if (travel=='') {
-                  $('.questionOptionVariant#qov'+currentQuestion).css('color','tomato');
+                  $('.questionOptionVariant#qov'+currentQuestion).addClass('questionOptionVariantBad');
                   return;
                 }
                 if(!airTravel)
