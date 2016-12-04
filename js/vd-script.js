@@ -1,10 +1,13 @@
 var user={};
-
 $(function(){
-    if (window.matchMedia('only screen and (max-width: 425px)').matches)
-      $('ol.Progress').removeClass('Progress--medium');
-
     var currentQuestion=1;
+
+    var mobileCurrentQuestion;
+
+    if (window.matchMedia('only screen and (max-width: 425px)').matches)
+      $('ol.Progress').remove();
+    else
+      $('.progress').remove();
 
     var marginGroupHeight=$('.question#q'+currentQuestion).height();
     $('.questionOption').css('margin-top', marginGroupHeight+'px');
@@ -138,5 +141,8 @@ $(function(){
           $('#questionButton').css('margin-top', marginItemHeight+'px');
           $('#skipButton').css('margin-top', marginItemHeight+'px');
           $('.questionNum').text('Питання '+currentQuestion);
+
+          mobileCurrentQuestion=10*(currentQuestion-1);
+          $('#mobileProgressBar').css('width',mobileCurrentQuestion+'%');
     });
 });
