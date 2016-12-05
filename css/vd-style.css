@@ -130,6 +130,14 @@
   .Progress > li {
     font-size: 0.6em;
   }
+  li.menuItem a{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  li.menuItem:last-child a{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .innerContainer{

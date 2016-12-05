@@ -4782,6 +4782,10 @@ footer p {
     margin-right: 10px;
   }
 
+  .navbar-brand {
+      padding: 9.5px 15px 9.5px;
+  }
+
   .homeHeader{
     width: 30%;
     text-align: left;
@@ -4846,6 +4850,19 @@ footer p {
     }
     .navbar-brand{
       padding-left: 0;
+      padding-right: 0;
+    }
+    nav .container{
+      margin: 0;
+      width: inherit;
+      padding: 0;
+    }
+
+    li.menuItem a{
+      padding-left: 0;
+      padding-right: 10px;
+    }
+    li.menuItem:last-child a{
       padding-right: 0;
     }
   }
