@@ -4782,10 +4782,6 @@ footer p {
     margin-right: 10px;
   }
 
-  .navbar-brand {
-      padding: 9.5px 15px 9.5px;
-  }
-
   .homeHeader{
     width: 30%;
     text-align: left;
@@ -4821,11 +4817,11 @@ footer p {
 
   .charts-wrapper {
     background-color: #fff;
-    width: 750px;  
+    width: 750px;
     margin: 0 auto;
-    height: 1125px; 
-    color: #74b974; 
-    border-radius: 10px; 
+    height: 1125px;
+    color: #74b974;
+    border-radius: 10px;
     padding-top: 10px;
   }
 
@@ -4842,4 +4838,20 @@ footer p {
 
   .arc path {
     stroke: #fff;
+  }
+
+  @media only screen and (device-width: 768px) {
+    .navbar-collapse{
+      padding: 0;
+    }
+    .navbar-brand{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .navbar-brand{
+      display: none;
+    }
   }
