@@ -4893,6 +4893,11 @@ footer p {
     .navbar-brand{
       display: none;
     }
+
+    .footer-title{
+      margin-bottom: 0;
+    }
+
     .homeHeader{
       width: 100%;
       text-align: left;
@@ -4920,5 +4925,9 @@ footer p {
 
     .intro-header{
       height: 80%;
+    }
+
+    .not-index{
+      height: 100%;
     }
   }

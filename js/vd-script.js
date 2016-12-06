@@ -175,7 +175,7 @@ $(function(){
                   return;
                 }
                 user['salary']=salary;
-                return sendFormData();                
+                return sendFormData();
               default:
                 break;
             }
@@ -190,10 +190,12 @@ $(function(){
           {
             add=innerHeight+120;
             $('.innerContainer').height(add);
+            $('.not-index').height($('.not-index').height()+100);
           }
           if(currentQuestion==7)
           {
             $('.innerContainer').height(innerHeight);
+            $('.not-index').height($('.not-index').height()-100);
           }
           currentQuestion+=1;
           $("li#pb"+currentQuestion).addClass('is-active');
@@ -222,10 +224,10 @@ $(function(){
       user.subscription = JSON.parse(localStorage.getItem('subscription'));
       $.ajax({
           type : "POST",
-          url : ENDPOINT_URI,         
-          contentType: "application/json; charset=utf-8",     
+          url : ENDPOINT_URI,
+          contentType: "application/json; charset=utf-8",
           data : JSON.stringify(user),
-          success : function(data) {           
+          success : function(data) {
             // Put the object into storage
             localStorage.setItem('resultData', JSON.stringify(data));
             window.location.href = 'results.html';
