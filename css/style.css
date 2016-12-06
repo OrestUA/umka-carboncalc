@@ -4844,10 +4844,24 @@ footer p {
     stroke: #fff;
   }
 
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: landscape)  {
+  .homeHeader{
+    width: 40%;
+  }
+}
+
   @media only screen and (device-width: 768px) {
     .navbar-collapse{
       padding: 0;
     }
+
+    .index{
+      height: 65%;
+    }
+
     .navbar-brand{
       padding-left: 0;
       padding-right: 0;
@@ -4882,10 +4896,6 @@ footer p {
     .homeHeader div:last-child{
       color: #1bba16;
       font-size: 28px;
-    }
-
-    .intro-header{
-      height: 65%;
     }
   }
 
