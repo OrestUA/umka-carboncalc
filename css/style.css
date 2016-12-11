@@ -4790,7 +4790,6 @@ footer p {
     width: 30%;
     text-align: left;
     margin: 0 0 0 7%;
-    font-size: 51px;
     font-weight: bold;
   }
 
@@ -4813,6 +4812,7 @@ footer p {
 
   .homeHeader div:last-child{
     color: #1bba16;
+    font-size: 51px;
   }
 
   .team-photo {
@@ -4821,11 +4821,11 @@ footer p {
 
   .charts-wrapper {
     background-color: #fff;
-    width: 750px;  
+    width: 750px;
     margin: 0 auto;
-    height: 1125px; 
-    color: #74b974; 
-    border-radius: 10px; 
+    height: 1125px;
+    color: #74b974;
+    border-radius: 10px;
     padding-top: 10px;
   }
 
@@ -4842,4 +4842,102 @@ footer p {
 
   .arc path {
     stroke: #fff;
+  }
+
+  @media only screen
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: landscape)  {
+  .homeHeader{
+    width: 40%;
+  }
+}
+
+  @media only screen and (device-width: 768px) {
+    .navbar-collapse{
+      padding: 0;
+    }
+
+    .index{
+      height: 65%;
+    }
+
+    .navbar-brand{
+      padding-left: 0;
+      padding-right: 0;
+    }
+    nav .container{
+      margin: 0;
+      width: inherit;
+      padding: 0;
+    }
+
+    li.menuItem a{
+      padding-left: 0;
+      padding-right: 10px;
+    }
+    li.menuItem:last-child a{
+      padding-right: 0;
+    }
+
+    .homeHeader div:first-child{
+      font-size: 45px;
+    }
+
+    .homeHeader div:nth-child(0n+2){
+      font-size: 33px;
+    }
+
+    .homeHeader div:nth-child(0n+3){
+      font-size: 51px;
+      color: #1bba16;
+    }
+
+    .homeHeader div:last-child{
+      color: #1bba16;
+      font-size: 28px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .navbar-brand{
+      display: none;
+    }
+
+    .footer-title{
+      margin-bottom: 0;
+    }
+
+    .homeHeader{
+      width: 100%;
+      text-align: left;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .homeHeader div:first-child{
+      font-size: 55px;
+    }
+
+    .homeHeader div:nth-child(0n+2){
+      font-size: 40.5px;
+    }
+
+    .homeHeader div:nth-child(0n+3){
+      font-size: 62px;
+      color: #1bba16;
+    }
+
+    .homeHeader div:last-child{
+      color: #1bba16;
+      font-size: 35px;
+    }
+
+    .intro-header{
+      height: 80%;
+    }
+
+    .not-index{
+      height: 100%;
+    }
   }
