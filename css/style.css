@@ -4823,11 +4823,21 @@ footer p {
     background-color: #fff;
     width: 750px;
     margin: 0 auto;
-    height: 1125px;
+    height: 1110px;
     color: #74b974;
     border-radius: 10px;
     padding-top: 10px;
   }
+
+    .share {
+      background-color: transparent;
+      width: 750px;
+      margin: 0 auto;
+      height:150px;
+      color: #74b974;
+      border-radius: 10px;
+      padding-top: 10px;
+    }
 
   #resultsPie text {
     fill: #fff;

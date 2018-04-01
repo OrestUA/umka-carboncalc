@@ -3,7 +3,8 @@ var gender='';
 var salary='';
 var airTravel;
 var innerHeight=$('.innerContainer').height();
-var ENDPOINT_URI = 'http://172.23.76.243:8080/carbon_footprint';
+var CALC_ENDPOINT_URI = 'http://192.168.5.24:8080/calculate/carbon_footprint';
+var SAVE_ENDPOINT_URI = 'http://192.168.5.24:8080/save/carbon_footprint';
 // $(window).bind('beforeunload',function(){
 //   return 'Are you sure you want to leave?';
 // });
@@ -175,7 +176,8 @@ $(function(){
                   return;
                 }
                 user['salary']=salary;
-                return sendFormData();
+//                return sendFormData();
+                  return calculateFootPrint();
               default:
                 break;
             }
@@ -218,13 +220,44 @@ $(function(){
           $('#mobileProgressBar').css('width',mobileCurrentQuestion+'%');
     });
 
+    	$("#userDataForm").submit(function( event ) {
+    	        return sendFormData();
+    		});
+
     function sendFormData() {
-      user.name = localStorage.getItem('name');
-      user.email = localStorage.getItem('email');
-      user.subscription = JSON.parse(localStorage.getItem('subscription'));
+    var results = JSON.parse(localStorage.getItem('resultData'));
+
+    var userData = results.userInput;
+
+      user = userData;
+      user.name = $("#inputName").val();
+      user.email = $("#inputEmail").val()
+      user.subscription = JSON.parse($("#inputSubscription").prop('checked'));
+
       $.ajax({
           type : "POST",
-          url : ENDPOINT_URI,
+          url : SAVE_ENDPOINT_URI,
+          contentType: "application/json; charset=utf-8",
+          data : JSON.stringify(user),
+          success : function(data) {
+            // Put the object into storage
+            localStorage.setItem('resultData', JSON.stringify(data));
+            window.location.href = 'thanks.html';
+          },
+          error : function(error) {
+            console.error( "error" );
+          },
+      });
+    }
+
+
+    function calculateFootPrint() {
+//      user.name = localStorage.getItem('name');
+//      user.email = localStorage.getItem('email');
+//      user.subscription = JSON.parse(localStorage.getItem('subscription'));
+      $.ajax({
+          type : "POST",
+          url : CALC_ENDPOINT_URI,
           contentType: "application/json; charset=utf-8",
           data : JSON.stringify(user),
           success : function(data) {
@@ -237,4 +270,5 @@ $(function(){
           },
       });
     }
+
 });

@@ -68,13 +68,30 @@ $(document).ready(function() {
 		});
 
 		// Handle form submit
-		$("#userDataForm").submit(function( event ) {	
-			localStorage.setItem('name', $("#inputName").val());
-			localStorage.setItem('email', $("#inputEmail").val());
-			localStorage.setItem('subscription', $("#inputSubscription").prop('checked'));			
-			event.preventDefault();
-			window.location.href = 'form.html';			
-		});
+//		$("#userDataForm").submit(function( event ) {
+//			localStorage.setItem('name', $("#inputName").val());
+//			localStorage.setItem('email', $("#inputEmail").val());
+//			localStorage.setItem('subscription', $("#inputSubscription").prop('checked'));
+//			event.preventDefault();
+//			window.location.href = 'thanks.html';
+//		});
+
+		$("#startForm").submit(function( event ) {
+        			event.preventDefault();
+        			window.location.href = 'form.html';
+        });
+
+        $('#save_image_locally').click(function(){
+ 	        html2canvas($("#save_div"), {
+ 	    	allowTaint: true,
+ 	        onrendered: function(canvas) {
+ 					$('.paste').prepend(canvas);
+             var dataURL = canvas.toDataURL();
+         		console.log(dataURL);
+ 	        }
+            });
+        });
+
 		
 		//Subscribe		
 		if (typeof UIMorphingButton !== 'undefined') {
